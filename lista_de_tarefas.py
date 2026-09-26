@@ -47,6 +47,11 @@ def cadastrar():
         }
         lista.append(nova_tarefa)
         print (lista)
+def finalizar():
+        tarefa = input("Qual tarefa deseja deixar como concluída? ")
+        tarefa2 = lista.index(tarefa)
+        lista[tarefa2] = "Sim"
+        print("Tarefa concluída!")
 while True:
     print ("1 - Mostrar toda as tarefas")
     print ("2 - Mostrar tarefas concluídas")
@@ -70,6 +75,6 @@ while True:
     elif opcao == "5":
         cadastrar()
     elif opcao == "6":
-        break
+        finalizar()
     else:
             print("Opção inválida. Tente novamente.")
