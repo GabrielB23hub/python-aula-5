@@ -49,9 +49,19 @@ def cadastrar():
         print (lista)
 def finalizar():
         tarefa = input("Qual tarefa deseja deixar como concluída? ")
-        tarefa2 = lista.index(tarefa)
-        lista[tarefa2] = "Sim"
-        print("Tarefa concluída!")
+        for x in lista:
+            if x["titulo"] == tarefa:
+                x["concluída"] = "Sim"
+                break
+        else:
+            print("Tarefa não encontrada.")
+def remover():
+        remover = (input("Qual tarefa remover? "))
+        for x in lista:
+          if x["titulo"] == remover:
+               lista.remove (x)
+               print("Tarefa removida da lista com sucesso")
+               break
 while True:
     print ("1 - Mostrar toda as tarefas")
     print ("2 - Mostrar tarefas concluídas")
@@ -76,5 +86,10 @@ while True:
         cadastrar()
     elif opcao == "6":
         finalizar()
+    elif opcao == "7":
+         remover()
+    elif opcao == "0":
+        print("Saindo...")
+        break
     else:
             print("Opção inválida. Tente novamente.")
